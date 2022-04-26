@@ -1,15 +1,6 @@
 const fs = require('fs');
-var { shillcount } = require('./commands/shill/shillcount.json');
 
-// Read the json file
-let shill = JSON.parse(fs.readFileSync('./commands/shill/shillcount.json'));
-shill = JSON.stringify(shill, null, 2);
+const remember = JSON.parse(fs.readFileSync('./commands/remember/remember.json'));
+const userNote = remember['793493333405990932'];
 
-// Before
-console.log(shill);
-
-
-// After
-console.log(shill.shillcount);
-
-fs.writeFileSync('./commands/shill/shillcount.json', shill);
+console.log(userNote);
