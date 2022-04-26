@@ -131,3 +131,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# The json files so I can keep a fresh repo even while I'm running the bot
+.commands\remember\remember.json
+.commands\shill\shillcount.json
