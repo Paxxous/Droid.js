@@ -19,13 +19,13 @@ client.on('ready', () => {
 
 
 
-// Commands rn
 client.on('interactionCreate', async interaction => {
   if (!interaction.isCommand) return;
 
   const { commandName } = interaction;
 
   switch(commandName) {
+    // Commands:
     case "ping":
       await interaction.reply('check your dms ;)');
       await interaction.user.send('pong >:(');
@@ -69,7 +69,7 @@ client.on('interactionCreate', async interaction => {
       // Send interaction and react to it
       var emojiis = ['🪨', '🧻', '✂️'];
       var choice = emojiis[Math.floor(Math.random() * emojiis.length)];
-      console.log(choice);
+      // console.log(choice);
       
       rps = await interaction.reply({ content: 'Rock paper or scissors?', fetchReply: true });
       rps.react('🪨');
