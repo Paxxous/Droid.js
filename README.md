@@ -4,7 +4,7 @@ The javascript version of my discord bot, this time written in [Discord.js](http
 
 ## Setup Droid
 
-In order to setup droid to host on your own machine, you must have [Node.js](https://nodejs.org/) installed. Fist, clone the repository via the git.
+In order to setup droid to host on your own machine, you must have [Node.js](https://nodejs.org/) installed. Fist, clone the repository via git.
 
 ```sh
 git clone https://github.com/Paxxous/Droid.js.git
