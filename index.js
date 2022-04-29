@@ -3,6 +3,7 @@ const { Client, Intents } = require('discord.js');
 const { TOKEN, name } = require('./config.json');
 const { MessageEmbed, Message } = require('discord.js');
 const fs = require('fs');
+const fetch = require('node-fetch');
 
 
 
@@ -130,7 +131,7 @@ client.on('interactionCreate', async interaction => {
 
       break;
 
-    case "remember":
+    case "remember":  
       interaction.reply('Please reply with the content you want me to remember.').then(() =>{
         const filter = m => interaction.user.id === m.author.id;
 
@@ -166,6 +167,19 @@ client.on('interactionCreate', async interaction => {
       .catch(() => {
         interaction.followUp('Failed to collect note');
       });
+      break;
+  
+    case "cat":
+      // Send a blank message
+      await interaction.deferReply();
+
+      // Get and convert a cat picture link to json
+      // const { file } = await fetch('https://aws.random.cat/meow').then(response => response.json());
+
+      // Edit the reply with the image
+      await interaction.editReply("Currently depricated");
+        // .catch(await interaction.editReply("Error when getting cat pick, REST api could be experiencing downtime."));
+
       break;
   }
 });

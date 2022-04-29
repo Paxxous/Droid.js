@@ -10,6 +10,7 @@ const commands = [
   new SlashCommandBuilder().setName('rockpaperscissors').setDescription('Play rock paper scissors with your favorite bot (me).'),
   new SlashCommandBuilder().setName('remember').setDescription('Keep your darkest secrets and notes in a database, (aka a json file {/remind to receive your note.})'),
   new SlashCommandBuilder().setName('remind').setDescription('Remind you with the note that you requested me to save :D, if you didn\'t save a note, use /remember.'),
+  new SlashCommandBuilder().setName('cat').setDescription('I\'ll send a random cat picture to you via the aws random cat REST api.'),
 ]/* Note: the reson the array is being mapped to json is because the discord api uses json instead of a js array */.map(command => command.toJSON());
 
 const rest = new REST({ version: '9'}).setToken(TOKEN);

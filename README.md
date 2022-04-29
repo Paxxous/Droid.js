@@ -35,3 +35,23 @@ node .
 ```
 
 Feel free to tweak the source as much as you like ;D.
+
+## Commands
+
+* **/ping**
+  * Dm the user the word "pong"
+
+* **/shill**
+  * Shills stuff like my website or my github to the user who requests it. Had fun making this because I got to play around with the embed system that node.js has.
+
+* **/rockpaperscissors**
+  * Plays rock, paper, scissors, with the user who runs the command. This incorporates reactions to give the user a choice against droid. Droid just picks the reaction randomly.
+
+* **/remember**
+  * Saves the user's input to an advanced database called a json file. I had fun making this because I got to learn how I could interact with a json file using node. I may swap over to an actual database though, since a json file isn't really the best place to put this info, if it were encrypted it would be much safer.
+
+* **/remind**
+  * Get the text that you saved to the remember.json file. droid responds based on your user id, so if you're requesting your note through another account, you're not going to get the correct note.
+
+* **/cat**
+  * Use the aws random cat REST api to get random cat pictures. Currently not working, sometimes an image is recieved, and sometimes you get an error.
