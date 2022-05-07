@@ -1,10 +1,9 @@
 // Discord.js classes
 const { Client, Intents } = require('discord.js');
-const { TOKEN, name } = require('./config.json');
+const { TOKEN, name, awaitTime } = require('./config.json');
 const { MessageEmbed, Message } = require('discord.js');
 const fs = require('fs');
 const fetch = require('node-fetch');
-
 
 
 // Create a client instance
@@ -17,7 +16,6 @@ const client = new Client({
 client.on('ready', () => {
   console.log(`${name} is ready :D`);
 });
-
 
 
 client.on('interactionCreate', async interaction => {
@@ -85,7 +83,7 @@ client.on('interactionCreate', async interaction => {
       // Get the choice of the bot
 
       // Wait for the users reply
-      rps.awaitReactions({ filter, max: 1, time: 6000, errors: ['time'] })
+      rps.awaitReactions({ filter, max: 1, time: awaitTime, errors: ['time'] })
         .then(collected => {
           const react = collected.first();
 
@@ -135,7 +133,7 @@ client.on('interactionCreate', async interaction => {
       interaction.reply('Please reply with the content you want me to remember.').then(() =>{
         const filter = m => interaction.user.id === m.author.id;
 
-        interaction.channel.awaitMessages({ filter, time: 10000, max: 1, errors: ['time'] })
+        interaction.channel.awaitMessages({ filter, time: awaitTime, max: 1, errors: ['time'] })
           .then(messages => {
             // Get and save the user input
             const note = messages.first().content;
@@ -183,6 +181,7 @@ client.on('interactionCreate', async interaction => {
       break;
   }
 });
+
 
 // login to the bot
 client.login(TOKEN);

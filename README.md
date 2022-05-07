@@ -55,3 +55,4 @@ Feel free to tweak the source as much as you like ;D.
 
 * **/cat**
   * Use the aws random cat REST api to get random cat pictures. Currently not working, sometimes an image is recieved, and sometimes you get an error.
+  
